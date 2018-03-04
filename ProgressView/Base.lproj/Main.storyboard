@@ -1,24 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BVT-Qm-ypO">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Root View Controller-->
+        <scene sceneID="JdD-4f-tjG">
+            <objects>
+                <viewController id="BVT-Qm-ypO" customClass="RootViewController" customModule="ProgressView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3lg-8V-mS8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PLQ-FJ-zcz">
+                                <rect key="frame" x="16" y="665" width="343" height="2"/>
+                            </progressView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DRs-Yf-Tph">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="665"/>
+                                <connections>
+                                    <segue destination="Xg5-0a-gCE" kind="embed" id="Ah4-ub-nXo"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="PLQ-FJ-zcz" firstAttribute="leading" secondItem="3lg-8V-mS8" secondAttribute="leadingMargin" id="75v-Qt-77m"/>
+                            <constraint firstItem="DRs-Yf-Tph" firstAttribute="leading" secondItem="3lg-8V-mS8" secondAttribute="leading" id="JLR-cI-rgz"/>
+                            <constraint firstItem="PLQ-FJ-zcz" firstAttribute="bottom" secondItem="hec-i2-Tyl" secondAttribute="bottom" id="QIp-8c-6rh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PLQ-FJ-zcz" secondAttribute="trailing" id="QmG-fX-eCm"/>
+                            <constraint firstAttribute="trailing" secondItem="DRs-Yf-Tph" secondAttribute="trailing" id="e2L-sw-73u"/>
+                            <constraint firstItem="PLQ-FJ-zcz" firstAttribute="top" secondItem="DRs-Yf-Tph" secondAttribute="bottom" id="jlS-hi-VEH"/>
+                            <constraint firstItem="DRs-Yf-Tph" firstAttribute="top" secondItem="3lg-8V-mS8" secondAttribute="top" id="weF-Ij-QC2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hec-i2-Tyl"/>
+                    </view>
+                    <connections>
+                        <outlet property="progressView" destination="PLQ-FJ-zcz" id="nXW-MH-h70"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cCm-73-8JP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1158" y="-213"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="7OJ-Uy-B8q">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="Xg5-0a-gCE" customClass="PageViewController" customModule="ProgressView" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WCK-r7-FNZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-401" y="-212"/>
+        </scene>
+        <!--Yellow View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="YellowViewController" id="BYZ-38-t0r" customClass="YellowViewController" customModule="ProgressView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="494" y="-573"/>
+        </scene>
+        <!--Blue View Controller-->
+        <scene sceneID="uoa-uh-JVB">
+            <objects>
+                <viewController storyboardIdentifier="BlueViewController" id="pc0-fs-ssj" customClass="BlueViewController" customModule="ProgressView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gwD-uS-6tB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.030457442939999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="Bm4-Zn-SSF"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n1l-f6-Vxo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1633" y="-573"/>
+        </scene>
+        <!--Red View Controller-->
+        <scene sceneID="GOg-fJ-YDe">
+            <objects>
+                <viewController storyboardIdentifier="RedViewController" id="oEi-UC-Q8w" customClass="RedViewController" customModule="ProgressView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0dP-Zp-5Cr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.079229935850000002" blue="0.01750073811" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="wfJ-lO-Txa"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rbl-eD-2HQ" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="494" y="131"/>
+        </scene>
+        <!--Green View Controller-->
+        <scene sceneID="nq7-e5-CXK">
+            <objects>
+                <viewController storyboardIdentifier="GreenViewController" id="czT-F6-VPW" customClass="GreenViewController" customModule="ProgressView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gmI-a0-SGn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="1" blue="0.093641497320000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="Q8O-eW-jX3"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hdd-JQ-Ir0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1633" y="131"/>
         </scene>
     </scenes>
 </document>
